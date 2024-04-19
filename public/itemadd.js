@@ -3,30 +3,41 @@ const amountInput= document.querySelector("#itemAmount");
 const priceInput= document.querySelector("#itemPrice");
 const categoryInput= document.querySelector("#itemCategory");
 
-function addItem() {
-    const url = MongoUri + "/" + dbname.collectionname;
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: nameInput.value,
-            amount: amountInput.value,
-            price: priceInput.value,
-            category: categoryInput.value
-        })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to add item');
+const MongoClient = require('mongodb').MongoClient;
+
+// MongoDB kapcsolat létrehozása
+MongoClient.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
+    if (err) {
+        console.error('Failed to connect to MongoDB:', err);
+        return;
+    }
+    
+    console.log('Connected to MongoDB');
+
+    // Adatbázis kiválasztása
+    const db = client.db(dbname);
+
+    // Kollekció kiválasztása
+    const collection = db.collection(collectionname);
+
+    // Beszúrandó dokumentum
+    const newItem = {
+        name: nameInput.value,
+        amount: amountInput.value,
+        price: priceInput.value,
+        category: categoryInput.value
+    };
+
+    // Dokumentum beszúrása
+    collection.insertOne(newItem, function(err, result) {
+        if (err) {
+            console.error('Failed to insert item into database:', err);
+            return;
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Employee added:', data);
-        // Esetlegesen frissítheted a felhasználói felületet az új elem hozzáadása után
-        // pl. újra lekérdezheted az összes elemet és megjelenítheted őket a felületen
-    })
-    .catch(error => console.error('Error adding employee:', error));
-}
+
+        console.log('Item inserted into database:', result);
+    });
+
+    // MongoDB kapcsolat bezárása
+    client.close();
+});

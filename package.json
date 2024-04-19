@@ -5,15 +5,15 @@
   "main": "items.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
-      "start": "node items.js",
-      "build": "npm install"
+    "start": "node items.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "Gillich Norbert",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mongodb": "^6.5.0"
+    "mongodb": "^6.5.0",
+    "process": "^0.11.10"
   }
 }

@@ -1,9 +1,11 @@
 const { MongoClient } = require('mongodb');
 
-const uri = "";
-const client = new MongoClient(uri);
-const dbname = "";
-const collectionname = "";
+
+
+const MongoUri = process.env.uri;
+const client = new MongoClient(MongoUri);
+const dbname = process.env.dbname;
+const collectionname = process.env.collectionname;
 
 async function run() {
     try {

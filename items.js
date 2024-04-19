@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const itemPlace = document.getElementById('itemPlace');
 
 
 

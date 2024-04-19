@@ -1,16 +1,23 @@
+const nameInput = document.querySelector("#itemName");
+const amountInput= document.querySelector("#itemAmount");
+const priceInput= document.querySelector("#itemPrice");
+const categoryInput= document.querySelector("#itemCategory");
+
 document.addEventListener('DOMContentLoaded', function () {
     // A submit esemény figyelése a form elemen
     const form = document.getElementById('addItemForm');
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Az alapértelmezett működés megakadályozása
 
+    
+
         // Az űrlap adatokának gyűjtése
         const formData = new FormData(form);
         const newItem = {
-            name: formData.get('itemName'), // Módosítás: 'itemName' helyett 'name'
-            amount: formData.get('itemAmount'), // Módosítás: 'itemAmount' helyett 'amount'
-            price: formData.get('itemPrice'), // Módosítás: 'itemPrice' helyett 'price'
-            category: formData.get('itemCategory') // Módosítás: 'itemCategory' helyett 'category'
+            name: nameInput.value, // Módosítás: 'itemName' helyett 'name'
+            amount: amountInput.value, // Módosítás: 'itemAmount' helyett 'amount'
+            price: priceInput.value, // Módosítás: 'itemPrice' helyett 'price'
+            category: categoryInput.value // Módosítás: 'itemCategory' helyett 'category'
         };
 
         // POST kérés küldése a szervernek

@@ -21,8 +21,8 @@ app.get('/items', async (req, res) => {
 
         console.log("Lekérdezés előtt");
         const items = await collection.find().toArray();
-        console.log("Lekérdezés után");
-        console.log(items);
+        console.log("Lekérdezés kész!");
+
 
         res.json(items); // Elküldjük az adatokat JSON formátumban
     } catch (err) {

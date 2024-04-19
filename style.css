@@ -1,0 +1,424 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+
+.container {
+    width: 70%;
+    margin: 0 ; /* Középre igazítás */
+    padding: 5px; /* Belső térköz a tartalom körül */
+    bottom: 20%;
+    margin-right: 28%;
+}
+
+/* Fejléc stílusok */
+header {
+    background-color: black;
+    padding: 10px 0;
+    color: yellow;
+}
+
+
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: yellow;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
+
+/* Kategória szűrő gombok stílusok */
+
+
+.nav-link {
+    color: #666;
+}
+
+
+
+/* Termék kártyák és tartalmuk stílusok */
+.flex-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* A tartalmat balra igazítjuk a sorokban */
+    width: 70%;
+    max-height: 72.3%;
+    position: fixed;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    min-height: 100px;
+    overflow-x: hidden;
+    
+}
+
+
+.card-item {
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Beer {
+    background-color: lightgreen;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Energydrink {
+    background-color: blue;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Water {
+    background-color: aqua;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Shot {
+    
+        background-color:blueviolet;
+        color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flexbox;
+        min-width: 11rem;
+        max-width: 11rem;
+        min-height: 100px;
+        max-height: 100px;
+}
+
+.Spritz {
+    background-color: rosybrown;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Champagne {
+    background-color: gold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Longdrink {
+    background-color:limegreen;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Cocktail {
+    background-color: orange;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.Soda {
+    background-color:cadetblue;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+    color: white;
+}
+
+.Cup {background-color: red;
+border: 1px solid #ccc;
+border-radius: 5px;
+display: flexbox;
+min-width: 11rem;
+max-width: 11rem;
+min-height: 100px;
+max-height: 100px;
+color: white;
+}
+
+.card-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: 1em;
+    color: #666;
+}
+
+.card-text {
+    font-size: 1em;
+}
+
+
+
+.summarycontainer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-width: 30%;
+    padding-top: 7%;
+    height: 100%;
+    background-color: #fff; /* Háttérszín */
+    border: 1px solid #ccc; /* Keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.buttonSum {
+    right: 0;
+    bottom: 10px;
+    top: 87.5%;
+    position: fixed;
+    z-index: 999; /* Biztosítja, hogy a fixált elem a lap többi tartalma fölé kerüljön */
+
+}
+
+#multiplyInput {
+    width: 15%;
+    margin: 10px;
+
+}
+.input-group {
+    display: flex;
+  }
+  
+td .form-control {
+    flex: 1;
+    margin-right: 5px; /* Opcionális: térköz az input mező és a gombok között */
+    min-width: 4pc;
+    text-align: center;
+  }
+  
+  .input-group .btn {
+    margin: 10px;
+    width: 15%;
+  }
+
+/* Fixált összegzés stílusok */
+.fixed-summary {
+    position: fixed;
+    bottom: 0;
+    right: 1%;
+    width: 28%;
+    max-height: 60%;
+    bottom: 25%;
+    height: 100%;
+    background-color: #fff; /* Háttérszín */
+    border: 1px solid #ccc; /* Keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+    z-index: 999; /* Biztosítja, hogy a fixált elem a lap többi tartalma fölé kerüljön */
+    overflow-y: scroll;
+    flex-wrap: wrap;
+
+
+}
+
+/* A táblázat fejlécének stílusa */
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0;
+}
+
+/* A táblázat fejlécének celláihoz tartozó stílusok */
+.table th {
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+}
+
+.table {
+    padding: 0;
+}
+
+.table th,
+.table td {
+    font-size: 1rem;
+    padding: 8px;
+
+}
+
+.table th {
+    font-weight: bold;
+}
+
+.totalText {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+
+}
+
+.trashbin {
+    justify-content: center;
+    width: 30px;
+}
+
+.tableTrash {
+    width: 20px;
+}
+
+.tablePrice {
+    width: 20px;
+}
+
+.tablePiece {
+    width: 20px;
+}
+
+#total {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+
+}
+
+#fixed-list {
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+
+#totalAmount {
+    top: 76%;
+    right: 1%;
+    position: fixed;
+    width: 28%; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
+    height: 10%;
+    max-height: 80%;
+    background-color: #fff; /* Háttérszín */
+    border: 1px solid #ccc; /* Keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    padding-left: 5px;
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+    z-index: 999;
+    justify-content: center;
+    text-align: center;
+}
+
+#clearListBtn {
+    width: 28%;
+    height: 12.5%;
+    position: fixed;
+    bottom: 0.7%;
+    right: 1%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categorycontainer {
+    min-height: 30%;
+    top: 76%;
+    position: fixed;
+    width: 69%; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
+    height: 10%;
+    max-height: 80%;
+    background-color: #fff; /* Háttérszín */
+    border: 1px solid #ccc; /* Keret */
+    border-radius: 5px; /* Kerekített sarkok */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* A tartalmat balra igazítjuk a sorokban */
+    overflow-x: scroll;
+
+}
+
+/*#categoryFilter {
+    
+
+
+
+}
+*/
+#backButton {
+    height: 97%;
+    width: 250px;
+}
+
+.categoryButton .btn {
+    margin-top: 5px;
+    height: 70%;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap; /* Új sor kezdése, ha az elemek nem férnek el egy sorban */
+    gap: 1rem; /* Az elemek közötti térköz */
+    margin-right: -1rem; /* A jobb oldali elemek közötti részletek eltávolítása */
+    height: 80px;
+}

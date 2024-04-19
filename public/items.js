@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     fetch('/items')
         .then(response => response.json())
-        .then(data => {
+        .then(item => {
             const itemPlace = document.getElementById('itemPlace');
             const cardContainer = document.createElement('div');
             cardContainer.className = 'row';
             itemPlace.appendChild(cardContainer);
 
-            data.forEach(item => {
+            item.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card-item';
                 card.innerHTML = `

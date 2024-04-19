@@ -11,6 +11,7 @@ const multiplyButton3 = document.getElementById("szorzas3");
 const multiplyButton4 = document.getElementById("szorzas4");
 const multiplyInput = document.getElementById("multiplyInput");
 
+
 const categoryTranslations = {
     "Soda": "Üdítő",
     "Shot": "Rövidital",

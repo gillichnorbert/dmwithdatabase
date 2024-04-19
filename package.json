@@ -2,10 +2,10 @@
   "name": "dm2",
   "version": "1.0.0",
   "description": "",
-  "main": "items.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node items.js",
+    "start": "node server.js",
     "build": "npm install"
   },
   "keywords": [],

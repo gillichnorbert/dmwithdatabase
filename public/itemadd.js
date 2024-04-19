@@ -3,7 +3,7 @@ const amountInput= document.querySelector("#itemAmount");
 const priceInput= document.querySelector("#itemPrice");
 const categoryInput= document.querySelector("#itemCategory");
 
-function addEmployee() {
+function addItem() {
     const url = MongoUri + "/" + dbname.collectionname;
     fetch(url, {
         method: 'POST',

@@ -2,14 +2,16 @@ const { MongoClient } = require('mongodb');
 
 const uri = "";
 const client = new MongoClient(uri);
+const dbname = "";
+const collectionname = "";
 
 async function run() {
     try {
         await client.connect();
         console.log("Connected to MongoDB!");
 
-        const database = client.db("drinkmaster");
-        const collection = database.collection("items");
+        const database = client.db(dbname);
+        const collection = database.collection(collectionname);
 
         console.log("Lekérdezés előtt");
         const items = await collection.find().toArray();

@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         const response = await fetch('/items');
         const items = await response.json();
+
+        // Meghívjuk a renderItems függvényt a letöltött elemekkel
+        renderItems(items);
         
         function renderItems(itemList) {    
             itemList.forEach(item => {

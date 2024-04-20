@@ -48,7 +48,7 @@ app.post('/items', async (req, res) => {
 
         const result = await collection.insertOne(newItem); // Beszúrjuk az új elemet az adatbázisba
 
-        console.log("Item added:", result.insertedId);
+        alert("Item added:", result.insertedId);
 
         res.status(201).json({ message: 'Item added successfully', itemId: result.insertedId });
     } catch (err) {
@@ -76,7 +76,7 @@ app.put('/items/:id', async (req, res) => {
             { $set: updatedItem }
         );
 
-        console.log("Item updated:", itemId);
+        alert("Item updated:", itemId);
 
         res.status(200).json({ message: 'Item updated successfully', itemId: itemId });
     } catch (err) {
@@ -103,10 +103,10 @@ app.delete('/items/:id', async (req, res) => {
         const result = await collection.deleteOne({ _id: new ObjectId(itemId) });
 
         if (result.deletedCount === 0) {
-            console.log("Item not found:", itemId);
+            alert("Item not found:", itemId);
             res.status(404).json({ error: 'Item not found' });
         } else {
-            console.log("Item deleted:", itemId);
+            alert("Item deleted:", itemId);
             res.status(200).json({ message: 'Item deleted successfully', itemId: itemId });
         }
     } catch (err) {

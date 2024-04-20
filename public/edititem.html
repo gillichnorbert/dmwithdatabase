@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ital hozzáadása</title>
-  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">DrinkMasters</a>
+      <a class="navbar-brand" href="#">DrinkMasters</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,26 +24,30 @@
     </div>
   </nav>
   
-
-    <div class="modal fade" id="operatorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="container mx-3">
-        <h1 class="mb-4">Ital Szerkesztése</h1>
-        <form id="addItemForm">
+  <div class="modal fade" id="operatorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="operatorModalLabel">Ital Szerkesztése</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addItemForm">
             <div class="mb-3">
-            <label for="itemName" class="form-label">Név:</label>
-            <input type="text" class="form-control" id="itemName" name="itemName">
+              <label for="itemName" class="form-label">Név:</label>
+              <input type="text" class="form-control" id="itemName" name="itemName">
             </div>
             <div class="mb-3">
-            <label for="itemAmount" class="form-label">Mennyiség:</label>
-            <input type="text" class="form-control" id="itemAmount" name="itemAmount">
+              <label for="itemAmount" class="form-label">Mennyiség:</label>
+              <input type="text" class="form-control" id="itemAmount" name="itemAmount">
             </div>
             <div class="mb-3">
-            <label for="itemPrice" class="form-label">Ár:</label>
-            <input type="text" class="form-control" id="itemPrice" name="itemPrice">
+              <label for="itemPrice" class="form-label">Ár:</label>
+              <input type="text" class="form-control" id="itemPrice" name="itemPrice">
             </div>
             <div class="mb-3">
-            <label for="itemCategory" class="form-label">Típus:</label>
-            <select class="form-control" id="itemCategory" name="itemCategory">
+              <label for="itemCategory" class="form-label">Típus:</label>
+              <select class="form-control" id="itemCategory" name="itemCategory">
                 <option value="Soda">Üdítő</option>
                 <option value="Cocktail">Koktél</option>
                 <option value="Longdrink">Longdrink</option>
@@ -56,26 +60,28 @@
                 <option value="Champagne">Pezsgő</option>
                 <option value="Water">Víz</option>
                 <option value="Other">Egyéb</option>
-            </select>
+              </select>
             </div>
-            <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" id="multiButton" data-bs-dismiss="modal">Mentés</button>
+          </form>
         </div>
-        </form>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="multiButton" data-bs-dismiss="modal">Mentés</button>
         </div>
+      </div>
     </div>
+  </div>
 
-  <table>
+  <table class="table table-striped">
     <thead>
+      <tr>
         <th>Név</th>
         <th>Mennyiség</th>
         <th>Ár</th>
         <th>Kategória</th>
+      </tr>
     </thead>
     <tbody id="editItemBody"></tbody>
   </table>
-
-  
   <script src="edititem.js"></script>
   <script src="bootstrap/bootstrap.js"></script>
 </body>

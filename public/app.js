@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 `;
                 cardContainer.appendChild(card);
+                card.addEventListener('click', function() {
+                    addItemToList(item.name, item.price);
+                });
             });
 
             // Régi kategória gombok generálása és eseménykezelőjük beállítása
@@ -225,7 +228,7 @@ function displayItems(itemsToDisplay) {
         const card = document.createElement('div');
         card.className = 'card-item';
         card.innerHTML = `
-            <div id="itemButton" class="${item.category}">
+            <div id="itemButton" class="${item.category}" style="background-color:${item.color}">
                 <div class="card-body">
                     <h5 class="card-title" id="itemName">${item.name}</h5>
                     <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>

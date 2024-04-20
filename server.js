@@ -1,5 +1,4 @@
 const { MongoClient, ObjectId } = require('mongodb');
-
 const express = require('express');
 
 const app = express();
@@ -15,12 +14,18 @@ app.use(express.json());
 
 app.use(express.static('public')); // A public mappában lévő fájlokhoz való hozzáférés engedélyezése
 
+// MongoDB-kapcsolat megnyitása az alkalmazás indulásakor
+client.connect()
+    .then(() => {
+        console.log("Connected to MongoDB!");
+    })
+    .catch(err => {
+        console.error("Error connecting to MongoDB:", err);
+    });
+
 // GET végpont a /items útvonalon az összes elem lekéréséhez
 app.get('/items', async (req, res) => {
     try {
-        await client.connect();
-        console.log("Connected to MongoDB!");
-
         const database = client.db(dbname);
         const collection = database.collection(collectionname);
 
@@ -32,9 +37,6 @@ app.get('/items', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
     }
 });
 
@@ -42,9 +44,6 @@ app.get('/items', async (req, res) => {
 app.post('/items', async (req, res) => {
     try {
         const newItem = req.body; // Az új elem a POST kérés testéből érkezik
-
-        await client.connect();
-        console.log("Connected to MongoDB!");
 
         const database = client.db(dbname);
         const collection = database.collection(collectionname);
@@ -57,12 +56,8 @@ app.post('/items', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
     }
 });
-
 
 // PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
 app.put('/items/:id', async (req, res) => {
@@ -70,14 +65,11 @@ app.put('/items/:id', async (req, res) => {
         const itemId = req.params.id;
         const updatedItem = req.body; // A módosított elem a PUT kérés testéből érkezik
 
-        await client.connect();
-        console.log("Connected to MongoDB!");
-
         const database = client.db(dbname);
         const collection = database.collection(collectionname);
 
         const result = await collection.updateOne(
-            { _id: itemId }, // Az azonosító egy sima string lesz
+            { _id: ObjectId(itemId) }, // Az azonosító ObjectId formátumban
             { $set: updatedItem } // A frissített adatok beállítása
         );
 
@@ -87,12 +79,8 @@ app.put('/items/:id', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
     }
 });
-
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);

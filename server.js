@@ -60,24 +60,30 @@ app.post('/items', async (req, res) => {
 
 
 // PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
-// PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
 app.put('/items/:id', async (req, res) => {
     try {
         const itemId = req.params.id;
-        const updatedFields = req.body; // A módosított mezők a PUT kérés testéből érkeznek
+        const updatedItem = req.body; // A módosított elem a PUT kérés testéből érkezik
+
+        await client.connect();
+        console.log("Connected to MongoDB!");
+
         const database = client.db(dbname);
         const collection = database.collection(collectionname);
+
         const result = await collection.updateOne(
-            { _id: ObjectId(itemId) }, // ObjectId-t használjuk az azonosítóhoz
-            { $set: updatedFields } // Csak a módosított mezőket frissítjük
+            { _id: itemId }, // Az azonosító egy sima string lesz
+            { $set: updatedItem } // A frissített adatok beállítása
         );
+
+        console.log("Item updated:", itemId);
+
         res.status(200).json({ message: 'Item updated successfully', itemId: itemId });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
 
 
 app.listen(port, () => {

@@ -59,7 +59,10 @@ app.post('/items', async (req, res) => {
 });
 
 
-// PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
+const { ObjectId } = require('mongodb');
+
+
+
 app.put('/items/:id', async (req, res) => {
     try {
         const itemId = req.params.id;
@@ -72,7 +75,7 @@ app.put('/items/:id', async (req, res) => {
         const collection = database.collection(collectionname);
 
         const result = await collection.updateOne(
-            { _id: ObjectId(itemId) }, // Az ObjectId konvertálás szükséges
+            { _id: new ObjectId(itemId) }, // Itt hozzuk létre az ObjectId példányt a megadott ID-ből
             { $set: updatedItem }
         );
 
@@ -84,6 +87,7 @@ app.put('/items/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 
 
 

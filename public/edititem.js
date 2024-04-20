@@ -49,3 +49,15 @@ function updateItemModal(button) {
     const modal = new bootstrap.Modal(document.getElementById('operatorModal'));
     modal.show();
 }
+
+document.getElementById('multiButton').addEventListener('click', async function(event) {
+    event.preventDefault();
+
+    // Adatok összegyűjtése a formból
+    const itemName = document.getElementById('itemName').value;
+    const itemAmount = document.getElementById('itemAmount').value;
+    const itemPrice = document.getElementById('itemPrice').value;
+    const itemCategory = document.getElementById('itemCategory').value;
+
+    // Írd ide az adatok adatbázisba mentését kezelő kódot
+});

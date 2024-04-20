@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         onclick="openUpdateItemModal(this)">
                             Szerkesztés
                         </button>
-                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')" disabled>
+                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')">
                             Törlés
                         </button>
                     </td>

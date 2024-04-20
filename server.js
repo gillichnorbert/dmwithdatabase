@@ -60,6 +60,7 @@ app.post('/items', async (req, res) => {
 
 
 // PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
+// PUT végpont az /items/:id útvonalon egy elem szerkesztéséhez
 app.put('/items/:id', async (req, res) => {
     try {
         const itemId = req.params.id;
@@ -76,6 +77,7 @@ app.put('/items/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 
 
 app.listen(port, () => {

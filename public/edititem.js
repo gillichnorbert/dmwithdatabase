@@ -33,13 +33,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-function updateItemModal(button) {
-    const itemId = button.getAttribute('data-id');
-    const itemName = document.getElementById('itemName').value;
-    const itemAmount = document.getElementById('itemAmount').value;
-    const itemPrice = document.getElementById('itemPrice').value;
-    const itemCategory = document.getElementById('itemCategory').value;
+function openUpdateItemModal(itemId, itemName, itemAmount, itemPrice, itemCategory) {
+    // Beállítjuk a modal ablak tartalmát a paraméterekkel
+    document.getElementById('itemName').value = itemName;
+    document.getElementById('itemAmount').value = itemAmount;
+    document.getElementById('itemPrice').value = itemPrice;
+    document.getElementById('itemCategory').value = itemCategory;
 
+    // Megjelenítjük a modal ablakot
+    const modal = new bootstrap.Modal(document.getElementById('operatorModal'));
+    modal.show();
+}
+
+function updateItem(itemId, itemName, itemAmount, itemPrice, itemCategory) {
     // Fetch kérés konfigurálása
     const requestOptions = {
         method: 'PUT',
@@ -70,8 +76,26 @@ function updateItemModal(button) {
             console.error('Error updating item:', error);
             // Írd ide a megfelelő hiba kezelést a felületen
         });
+}
+
+
+    // Fetch kérés elküldése a szervernek
+    fetch(`/items/${itemId}`, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Item updated successfully:', data);
+            // Írd ide a megfelelő frissítési logikát a felületen
+        })
+        .catch(error => {
+            console.error('Error updating item:', error);
+            // Írd ide a megfelelő hiba kezelést a felületen
+        });
 
     // Megjelenítjük a modal ablakot
     const modal = new bootstrap.Modal(document.getElementById('operatorModal'));
     modal.hide();
-}

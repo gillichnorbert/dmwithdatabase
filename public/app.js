@@ -200,10 +200,12 @@ categories.forEach(category => {
 
 // 3. Szűrés a kategóriák alapján
 function filterItemsByCategory(category) {
-    const filteredItems = items.filter(item => item.category === category);
-
-    displayItems(filteredItems);
+    if (items && items.length > 0) { // Ellenőrizzük, hogy a 'items' változó definiált és nem üres
+        const filteredItems = items.filter(item => item.category === category);
+        displayItems(filteredItems);
+    }
 }
+
 
 // 4. Eseménykezelés
 function displayItems(itemsToDisplay) {

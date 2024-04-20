@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const cardContainer = document.createElement('div');
             cardContainer.className = 'row';
             itemPlace.appendChild(cardContainer);
-
             items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card-item';
@@ -182,20 +181,10 @@ function saveItemListToSessionStorage() {
 }
 
 // 1. Kategóriák meghatározása
-const categories = [...new Set(items.map(item => item.category))];
+let categories = [];
 
 // 2. Felhasználói felület kialakítása
 const categoryFilter = document.getElementById('categoryFilter');
-
-categories.forEach(category => {
-    const button = document.createElement('button');
-    button.textContent = categoryTranslations[category]; // Magyar fordítás használata
-    button.classList.add('btn', 'btn-secondary','btn-lg', 'mx-2');
-    button.addEventListener('click', function() {
-        filterItemsByCategory(category);
-    });
-    categoryFilter.appendChild(button);
-});
 
 // 3. Szűrés a kategóriák alapján
 function filterItemsByCategory(category) {
@@ -238,17 +227,6 @@ window.addEventListener('DOMContentLoaded', function() {
         updateListAndTotal(); // Lista és végösszeg frissítése a mentett adatok alapján
     }
 });
-
-function openCashoutPage() {
-    window.open('cashout.html', "_self");
-    updateListAndTotal(); // Lista és végösszeg frissítése
-}
-
-function backToDrinks() {
-    updateListAndTotal(); // Lista és végösszeg frissítése
-
-    window.open('index.html', "_self");
-}
 
 // Vissza gomb eseménykezelője
 backButton.addEventListener('click', function() {

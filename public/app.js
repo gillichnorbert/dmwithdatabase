@@ -1,7 +1,6 @@
-// itemList inicializálása üres tömbként
 let itemList = [];
+let items = []; // Itt definiáljuk az items változót
 
-// Az itemList inicializálásának helye a többi változóval együtt
 const summaryBody = document.getElementById('summeryBody');
 const total = document.getElementById('total');
 const clearListBtn = document.getElementById('clearListBtn');
@@ -10,7 +9,7 @@ const multiplyButton2 = document.getElementById("szorzas2");
 const multiplyButton3 = document.getElementById("szorzas3");
 const multiplyButton4 = document.getElementById("szorzas4");
 const multiplyInput = document.getElementById("multiplyInput");
-let items; // Definiáljuk az items változót
+
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('/items')
@@ -200,12 +199,10 @@ categories.forEach(category => {
 
 // 3. Szűrés a kategóriák alapján
 function filterItemsByCategory(category) {
-    if (items && items.length > 0) { // Ellenőrizzük, hogy a 'items' változó definiált és nem üres
-        const filteredItems = items.filter(item => item.category === category);
-        displayItems(filteredItems);
-    }
-}
+    const filteredItems = items.filter(item => item.category === category);
 
+    displayItems(filteredItems);
+}
 
 // 4. Eseménykezelés
 function displayItems(itemsToDisplay) {

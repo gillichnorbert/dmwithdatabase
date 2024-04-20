@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     margin: 0;
@@ -8,11 +8,9 @@ body {
     background-color: #f8f9fa;
 }
 
-
-
 .container {
     width: 70%;
-    margin: 0 ; /* Középre igazítás */
+    margin: 0; /* Középre igazítás */
     padding: 5px; /* Belső térköz a tartalom körül */
     bottom: 20%;
     margin-right: 28%;
@@ -20,34 +18,29 @@ body {
 
 /* Fejléc stílusok */
 header {
-    background-color: black;
+    background-color: #000000; /* Fekete */
     padding: 10px 0;
-    color: yellow;
+    color: #ffff00; /* Sárga */
 }
-
-
 
 .navbar-brand {
     font-size: 1.5rem;
-    color: yellow;
+    color: #ffff00; /* Sárga */
 }
 
 .navbar-nav .nav-link {
     font-size: 1.1rem;
+    color: #666666; /* Szürke */
 }
 
 /* Kategória szűrő gombok stílusok */
-
-
 .nav-link {
-    color: #666;
+    color: #666666; /* Szürke */
 }
-
-
 
 /* Termék kártyák és tartalmuk stílusok */
 .flex-container {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* A tartalmat balra igazítjuk a sorokban */
     width: 70%;
@@ -57,9 +50,7 @@ header {
     scroll-behavior: smooth;
     min-height: 100px;
     overflow-x: hidden;
-    
 }
-
 
 .card-item {
     display: flexbox;
@@ -75,7 +66,7 @@ header {
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -85,8 +76,8 @@ header {
 }
 
 .Beer {
-    background-color: lightgreen;
-    border: 1px solid #ccc;
+    background-color: #90ee90; /* Világoszöld */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -96,9 +87,9 @@ header {
 }
 
 .Energydrink {
-    background-color: blue;
-    color: white;
-    border: 1px solid #ccc;
+    background-color: #0000ff; /* Kék */
+    color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -108,8 +99,8 @@ header {
 }
 
 .Water {
-    background-color: aqua;
-    border: 1px solid #ccc;
+    background-color: #00ffff; /* Világoskék */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -119,21 +110,20 @@ header {
 }
 
 .Shot {
-    
-        background-color:blueviolet;
-        color: white;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        display: flexbox;
-        min-width: 11rem;
-        max-width: 11rem;
-        min-height: 100px;
-        max-height: 100px;
+    background-color: #8a2be2; /* Kékibolyt */
+    color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
 }
 
 .Spritz {
-    background-color: rosybrown;
-    border: 1px solid #ccc;
+    background-color: #d46f6f; /* Rózsaszín */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -143,8 +133,8 @@ header {
 }
 
 .Champagne {
-    background-color: gold;
-    border: 1px solid #ccc;
+    background-color: #ffd700; /* Arany */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -154,8 +144,8 @@ header {
 }
 
 .Longdrink {
-    background-color:limegreen;
-    border: 1px solid #ccc;
+    background-color: #32cd32; /* Zöld */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -165,8 +155,8 @@ header {
 }
 
 .Cocktail {
-    background-color: orange;
-    border: 1px solid #ccc;
+    background-color: #ffa500; /* Narancs */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
@@ -176,26 +166,27 @@ header {
 }
 
 .Soda {
-    background-color:cadetblue;
-    border: 1px solid #ccc;
+    background-color: #5f9ea0; /* Tengerzöld */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
     max-width: 11rem;
     min-height: 100px;
     max-height: 100px;
-    color: white;
+    color: #ffffff; /* Fehér */
 }
 
-.Cup {background-color: red;
-border: 1px solid #ccc;
-border-radius: 5px;
-display: flexbox;
-min-width: 11rem;
-max-width: 11rem;
-min-height: 100px;
-max-height: 100px;
-color: white;
+.Cup {
+    background-color: #ff0000; /* Piros */
+    border: 1px solid #cccccc; /* Szürke */
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
+    color: #ffffff; /* Fehér */
 }
 
 .card-title {
@@ -205,7 +196,7 @@ color: white;
 
 .card-subtitle {
     font-size: 1em;
-    color: #666;
+    color: #666666; /* Szürke */
 }
 
 .card-text {
@@ -218,14 +209,14 @@ color: white;
     margin-top: 1.5%;
 }
 
-.summarycontainer{
+.summarycontainer {
     position: fixed;
     bottom: 0;
     right: 0;
     min-width: 30%;
     height: 100%;
-    background-color: #fff; /* Háttérszín */
-    border: 1px solid #ccc; /* Keret */
+    background-color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px; /* Kerekített sarkok */
     box-sizing: border-box; /* A padding ne növelje a szélességet */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -237,29 +228,28 @@ color: white;
     top: 87.5%;
     position: fixed;
     z-index: 999; /* Biztosítja, hogy a fixált elem a lap többi tartalma fölé kerüljön */
-
 }
 
 #multiplyInput {
     width: 15%;
     margin: 10px;
-
 }
+
 .input-group {
     display: flex;
-  }
-  
+}
+
 td .form-control {
     flex: 1;
     margin-right: 5px; /* Opcionális: térköz az input mező és a gombok között */
     min-width: 4pc;
     text-align: center;
-  }
-  
-  .input-group .btn {
+}
+
+.input-group .btn {
     margin: 10px;
     width: 15%;
-  }
+}
 
 /* Fixált összegzés stílusok */
 .fixed-summary {
@@ -270,15 +260,13 @@ td .form-control {
     max-height: 60%;
     bottom: 25%;
     height: 100%;
-    background-color: #fff; /* Háttérszín */
-    border: 1px solid #ccc; /* Keret */
+    background-color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px; /* Kerekített sarkok */
     box-sizing: border-box; /* A padding ne növelje a szélességet */
     z-index: 999; /* Biztosítja, hogy a fixált elem a lap többi tartalma fölé kerüljön */
     overflow-y: scroll;
     flex-wrap: wrap;
-
-
 }
 
 /* A táblázat fejlécének stílusa */
@@ -303,7 +291,6 @@ thead {
 .table td {
     font-size: 1rem;
     padding: 8px;
-
 }
 
 .table th {
@@ -314,8 +301,6 @@ thead {
     font-size: 60px;
     font-weight: bold;
     margin-bottom: 15px;
-
-
 }
 
 .trashbin {
@@ -340,16 +325,12 @@ thead {
     font-weight: bold;
     text-align: center;
     align-items: center;
-
 }
 
 #fixed-list {
     max-width: 100%;
     flex-wrap: wrap;
 }
-
-
-
 
 #totalAmount {
     top: 76%;
@@ -358,8 +339,8 @@ thead {
     width: 28%; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
     height: 10%;
     max-height: 80%;
-    background-color: #fff; /* Háttérszín */
-    border: 1px solid #ccc; /* Keret */
+    background-color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px; /* Kerekített sarkok */
     padding-left: 5px;
     box-sizing: border-box; /* A padding ne növelje a szélességet */
@@ -373,7 +354,7 @@ thead {
     height: 12.5%;
     position: fixed;
     bottom: 0.7%;
-    right: 1%; 
+    right: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,28 +367,20 @@ thead {
     width: 69%; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
     height: 10%;
     max-height: 80%;
-    background-color: #fff; /* Háttérszín */
-    border: 1px solid #ccc; /* Keret */
+    background-color: #ffffff; /* Fehér */
+    border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px; /* Kerekített sarkok */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     z-index: 999;
     justify-content: center;
     text-align: center;
     padding-top: 5px;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; /* A tartalmat balra igazítjuk a sorokban */
     overflow-x: scroll;
-
 }
 
-/*#categoryFilter {
-    
-
-
-
-}
-*/
 #backButton {
     height: 97%;
     width: 250px;
@@ -426,15 +399,14 @@ thead {
     height: 80px;
 }
 
-
 /* CSS-szabályok a light osztályhoz */
 .light {
-    background-color: white; /* példa: a háttérszín fehér */
+    background-color: #ffffff; /* Fehér */
 }
 
 /* A light osztályhoz tartozó szöveg színének megváltoztatása */
 .light .card-title,
 .light .card-subtitle,
 .light .card-text {
-    color: black; /* példa: a szöveg színe fekete */
+    color: #000000; /* Fekete */
 }

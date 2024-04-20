@@ -10,18 +10,19 @@ const multiplyButton2 = document.getElementById("szorzas2");
 const multiplyButton3 = document.getElementById("szorzas3");
 const multiplyButton4 = document.getElementById("szorzas4");
 const multiplyInput = document.getElementById("multiplyInput");
-
+let items; // Definiáljuk az items változót
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('/items')
         .then(response => response.json())
-        .then(item => {
+        .then(data => {
+            items = data; // A fetch kérés válaszként kapott adatokat mentjük az items változóba
             const itemPlace = document.getElementById('itemPlace');
             const cardContainer = document.createElement('div');
             cardContainer.className = 'row';
             itemPlace.appendChild(cardContainer);
 
-            item.forEach(item => {
+            items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card-item';
                 card.innerHTML = `

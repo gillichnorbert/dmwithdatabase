@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <td>${item.category}</td>
                     <td>
                         <button class="btn btn-primary" data-id="${item._id}" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category}" 
-                        onclick="updateItemModal(this)">
+                        onclick="openUpdateItemModal(this)">
                             Szerkesztés
                         </button>
-                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')">
+                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')" disabled>
                             Törlés
                         </button>
                     </td>

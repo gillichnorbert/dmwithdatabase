@@ -32,9 +32,6 @@ app.get('/items', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
     }
 });
 
@@ -57,9 +54,7 @@ app.post('/items', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
+    
     }
 });
 
@@ -87,9 +82,6 @@ app.put('/items/:id', async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
-    } finally {
-        await client.close();
-        console.log("MongoDB connection closed.");
     }
 });
 

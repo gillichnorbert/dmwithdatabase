@@ -86,6 +86,34 @@ app.put('/items/:id', async (req, res) => {
 });
 
 
+const { ObjectId } = require('mongodb');
+
+// ...
+
+app.delete('/items/:id', async (req, res) => {
+    try {
+        const itemId = req.params.id;
+
+        await client.connect();
+        console.log("Connected to MongoDB!");
+
+        const database = client.db(dbname);
+        const collection = database.collection(collectionname);
+
+        const result = await collection.deleteOne({ _id: new ObjectId(itemId) });
+
+        if (result.deletedCount === 0) {
+            console.log("Item not found:", itemId);
+            res.status(404).json({ error: 'Item not found' });
+        } else {
+            console.log("Item deleted:", itemId);
+            res.status(200).json({ message: 'Item deleted successfully', itemId: itemId });
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 app.listen(port, () => {

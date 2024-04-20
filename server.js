@@ -59,9 +59,6 @@ app.post('/items', async (req, res) => {
 });
 
 
-const { ObjectId } = require('mongodb');
-
-
 
 app.put('/items/:id', async (req, res) => {
     try {

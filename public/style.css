@@ -76,7 +76,6 @@ header {
 }
 
 .Beer {
-    background-color: #90ee90; /* Világoszöld */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -87,7 +86,6 @@ header {
 }
 
 .Energydrink {
-    background-color: #0000ff; /* Kék */
     color: #ffffff; /* Fehér */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
@@ -99,7 +97,6 @@ header {
 }
 
 .Water {
-    background-color: #00ffff; /* Világoskék */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -110,7 +107,6 @@ header {
 }
 
 .Shot {
-    background-color: #8a2be2; /* Kékibolyt */
     color: #ffffff; /* Fehér */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
@@ -122,7 +118,6 @@ header {
 }
 
 .Spritz {
-    background-color: #d46f6f; /* Rózsaszín */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -133,7 +128,6 @@ header {
 }
 
 .Champagne {
-    background-color: #ffd700; /* Arany */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -144,7 +138,6 @@ header {
 }
 
 .Longdrink {
-    background-color: #32cd32; /* Zöld */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -155,7 +148,6 @@ header {
 }
 
 .Cocktail {
-    background-color: #ffa500; /* Narancs */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -166,7 +158,6 @@ header {
 }
 
 .Soda {
-    background-color: #5f9ea0; /* Tengerzöld */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;
@@ -178,7 +169,6 @@ header {
 }
 
 .Cup {
-    background-color: #ff0000; /* Piros */
     border: 1px solid #cccccc; /* Szürke */
     border-radius: 5px;
     display: flexbox;

@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', function(event) {
   const password = passwordInput.value;
 
   // Ellenőrzés, hogy a megadott jelszó megfelelő-e
-  if (password === process.env.adminpass) { // Csak egy példa jelszó, valós alkalmazásban ne használjunk keménykódolt jelszavakat
+  if (password === "hajraciganyok") { // Csak egy példa jelszó, valós alkalmazásban ne használjunk keménykódolt jelszavakat
     window.location.href = 'admin.html'; // Átirányítás az admin felületre
   } else {
     alert('Hibás jelszó! Kérem próbálja újra.');

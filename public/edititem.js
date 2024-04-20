@@ -32,4 +32,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error('Error fetching items:', error);
     }
+    function updateItem(button) {
+        // Az adatok kinyerése a gomb adatattribútumaiból
+        const name = button.getAttribute('data-name');
+        const amount = button.getAttribute('data-amount');
+        const price = button.getAttribute('data-price');
+        const category = button.getAttribute('data-category');
+    
+        // Az adatok megjelenítése vagy feldolgozása a szerkesztéshez
+        // Például itt megjelenítheted a szerkesztő űrlapot a modalban
+        console.log('Szerkesztés gombra kattintva:', name, amount, price, category);
+    }
 });

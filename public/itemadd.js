@@ -14,7 +14,9 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, amount, price, category }) // Az adatok JSON formátumban
+        body: JSON.stringify({ name, amount, price, category }
+        
+        ) // Az adatok JSON formátumban
     })
     .then(response => {
         if (!response.ok) {

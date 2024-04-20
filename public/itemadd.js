@@ -1,43 +1,31 @@
-const nameInput = document.querySelector("#itemName");
-const amountInput= document.querySelector("#itemAmount");
-const priceInput= document.querySelector("#itemPrice");
-const categoryInput= document.querySelector("#itemCategory");
+// Az űrlap eseményének figyelése
+document.getElementById('addItemForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Az alapértelmezett formál működés megakadályozása
 
-const MongoClient = require('mongodb').MongoClient;
+    // Űrlap adatok gyűjtése
+    const name = document.getElementById('itemName').value;
+    const amount = document.getElementById('itemAmount').value;
+    const price = document.getElementById('itemPrice').value;
+    const category = document.getElementById('itemCategory').value;
 
-// MongoDB kapcsolat létrehozása
-MongoClient.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
-    if (err) {
-        console.error('Failed to connect to MongoDB:', err);
-        return;
-    }
-    
-    console.log('Connected to MongoDB');
-
-    // Adatbázis kiválasztása
-    const db = client.db(dbname);
-
-    // Kollekció kiválasztása
-    const collection = db.collection(collectionname);
-
-    // Beszúrandó dokumentum
-    const newItem = {
-        name: nameInput.value,
-        amount: amountInput.value,
-        price: priceInput.value,
-        category: categoryInput.value
-    };
-
-    // Dokumentum beszúrása
-    collection.insertOne(newItem, function(err, result) {
-        if (err) {
-            console.error('Failed to insert item into database:', err);
-            return;
+    // Az adatok elküldése a szervernek POST kéréssel
+    fetch('/items', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, amount, price, category }) // Az adatok JSON formátumban
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to add item');
         }
-
-        console.log('Item inserted into database:', result);
-    });
-
-    // MongoDB kapcsolat bezárása
-    client.close();
+        return response.json();
+    })
+    .then(data => {
+        console.log('Item added:', data);
+        // Esetlegesen frissítheted a felhasználói felületet az új elem hozzáadása után
+        // pl. újra lekérdezheted az összes elemet és megjelenítheted őket a felületen
+    })
+    .catch(error => console.error('Error adding item:', error));
 });

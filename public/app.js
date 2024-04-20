@@ -240,7 +240,7 @@ function displayItems(itemsToDisplay) {
         const card = document.createElement('div');
         card.className = 'card-item';
         card.innerHTML = `
-            <div id="itemButton" class="${item.category}" style="background-color:${item.color} color:${textColor}"">
+            <div id="itemButton" style="background-color:${item.color} color:${textColor}"">
                 <div class="card-body">
                     <h5 class="card-title" id="itemName">${item.name}</h5>
                     <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>

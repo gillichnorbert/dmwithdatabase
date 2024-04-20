@@ -62,12 +62,9 @@ const categoryTranslations = {
     "Water": "Víz",
     "Cocktail": "Koktél",
     "Cup": "Pohár",
-    "Other": "Egyéb",
     "Beer": "Sör",
     "Energydrink": "Energiaital",
-    "Spritz": "Fröccs, Bor",
-    "Wine": "Bor",
-    "Champagne": "Pezsgő"
+    "Spritz": "Fröccs, Bor"
   };
   
 
@@ -219,12 +216,9 @@ let categories = [    "Soda",
 "Water",
 "Cocktail",
 "Cup",
-"Other",
 "Beer",
 "Energydrink",
-"Spritz",
-"Wine",
-"Champagne"];
+"Spritz"];
 
 // 2. Felhasználói felület kialakítása
 const categoryFilter = document.getElementById('categoryFilter');
@@ -242,10 +236,11 @@ function displayItems(itemsToDisplay) {
     filteredItemsContainer.innerHTML = ''; // Töröljük az előző termékeket
 
     itemsToDisplay.forEach(item => {
+        const textColor = isLightColor(item.color) ? 'black' : 'white';
         const card = document.createElement('div');
         card.className = 'card-item';
         card.innerHTML = `
-            <div id="itemButton" class="${item.category}" style="background-color:${item.color}">
+            <div id="itemButton" class="${item.category}" style="background-color:${item.color} color:${textColor}"">
                 <div class="card-body">
                     <h5 class="card-title" id="itemName">${item.name}</h5>
                     <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>

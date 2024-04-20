@@ -59,6 +59,17 @@ header {
     min-height: 100px;
     max-height: 100px;
     box-sizing: border-box; /* A padding ne növelje a szélességet */
+
+}
+
+#itemButton {
+    border: 1px solid #cccccc; /* Szürke */
+    border-radius: 5px;
+    display: flexbox;
+    min-width: 11rem;
+    max-width: 11rem;
+    min-height: 100px;
+    max-height: 100px;
 }
 
 .card-body {

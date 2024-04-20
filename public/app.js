@@ -188,6 +188,11 @@ function addItemToList(name, price) {
     saveItemListToSessionStorage(); // Mentjük az itemList-et a sessionStorage-be
 }
 
+// Az itemList-et elmentjük a sessionStorage-be
+function saveItemListToSessionStorage() {
+    sessionStorage.setItem('itemList', JSON.stringify(itemList));
+}
+
 // Végösszeg frissítése
 function updateTotal() {
     var sum = 0;

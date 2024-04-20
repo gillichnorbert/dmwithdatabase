@@ -7,6 +7,7 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
     const amount = document.getElementById('itemAmount').value;
     const price = document.getElementById('itemPrice').value;
     const category = document.getElementById('itemCategory').value;
+    const color = document.getElementById('itemColor').value;
 
     // Az adatok elküldése a szervernek POST kéréssel
     fetch('/items', {
@@ -14,7 +15,7 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, amount, price, category }
+        body: JSON.stringify({ name, amount, price, category, color }
         
         ) // Az adatok JSON formátumban
     })

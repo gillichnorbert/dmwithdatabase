@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const card = document.createElement('div');
                 card.className = 'card-item';
                 card.innerHTML = `
-                    <div class="card ${item.category}">
+                    <div class="card ${item.category}" style="background-color:${item.color}">
                         <div class="card-body">
                             <h5 class="card-title">${item.name}</h5>
                             <h6 class="card-subtitle">${item.amount}</h6>

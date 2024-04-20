@@ -66,6 +66,17 @@
                 <option value="Other">Egyéb</option>
               </select>
             </div>
+            <div class="mb-3">
+                <label for="itemColor" class="form-label">Szín:</label>
+                <select class="form-control" id="itemColor" name="itemColor">
+                    <option value="#ff0000">Piros</option> <!-- Piros szín hexadecimális kódja -->
+                    <option value="#00ff00">Zöld</option> <!-- Zöld szín hexadecimális kódja -->
+                    <option value="#0000ff">Kék</option> <!-- Kék szín hexadecimális kódja -->
+                    <option value="#ffff00">Sárga</option> <!-- Sárga szín hexadecimális kódja -->
+                    <!-- további színek hozzáadása -->
+                </select>
+            </div>
+            
           </form>
         </div>
         <div class="modal-footer">
@@ -83,11 +94,12 @@
         <th>Mennyiség</th>
         <th>Ár</th>
         <th>Kategória</th>
+        <th>Szín</th>
       </tr>
     </thead>
     <tbody id="editItemBody"></tbody>
   </table>
-  
+
   <script src="edititem.js"></script>
   <script src="bootstrap/bootstrap.js"></script>
 </body>

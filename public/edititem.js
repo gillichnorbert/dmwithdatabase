@@ -21,6 +21,7 @@ function updateItem() {
     const itemAmount = document.getElementById('itemAmount').value;
     const itemPrice = document.getElementById('itemPrice').value;
     const itemCategory = document.getElementById('itemCategory').value;
+    const itemColor = document.getElementById('itemColor').value;
 
     const requestOptions = {
         method: 'PUT',
@@ -31,7 +32,8 @@ function updateItem() {
             name: itemName,
             amount: itemAmount,
             price: itemPrice,
-            category: itemCategory
+            category: itemCategory,
+            color: itemColor
         })
     };
 
@@ -88,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <td>${item.price} Ft</td>
                     <td>${item.category}</td>
                     <td>
-                        <button class="btn btn-primary" data-id="${item._id}" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category}" 
+                        <button class="btn btn-primary" data-id="${item._id}" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category} data-color="${item.color}" 
                         onclick="openUpdateItemModal(this)">
                             Szerkesztés
                         </button>

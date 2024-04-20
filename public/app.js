@@ -24,9 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const textColor = isLightColor(item.color) ? 'black' : 'white'; // Ha a szín világos, a szöveg legyen fekete, különben fehér
                 const card = document.createElement('div');
                 card.className = 'card-item';
-                const bgColor = isLightColor(item.color) ? 'white' : 'black'; // Háttérszín beállítása a szín fényereje alapján
                 card.innerHTML = `
-                    <div id="itemButton" style="background-color:${item.color}; color:${textColor}; background:${bgColor}">
+                    <div id="itemButton" style="background-color:${item.color}; color:${textColor};>
                         <div class="card-body">
                             <h5 class="card-title" id="itemName">${item.name}</h5>
                             <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>

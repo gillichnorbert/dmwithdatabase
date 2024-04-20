@@ -64,7 +64,6 @@ header {
 
 #itemButton {
     border: 1px solid #cccccc; /* Szürke */
-    border-radius: 5px;
     display: flexbox;
     min-width: 11rem;
     max-width: 11rem;

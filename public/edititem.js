@@ -4,12 +4,14 @@ function openUpdateItemModal(button) {
     const itemAmount = button.getAttribute('data-amount');
     const itemPrice = button.getAttribute('data-price');
     const itemCategory = button.getAttribute('data-category');
+    const itemColor = button.getAttribute('data-color');
 
     document.getElementById('itemId').value = itemId;
     document.getElementById('itemName').value = itemName;
     document.getElementById('itemAmount').value = itemAmount;
     document.getElementById('itemPrice').value = itemPrice;
     document.getElementById('itemCategory').value = itemCategory;
+    document.getElementById('itemColor').value = itemColor;
 
     const modal = new bootstrap.Modal(document.getElementById('operatorModal'));
     modal.show();

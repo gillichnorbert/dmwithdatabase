@@ -10,6 +10,33 @@ const multiplyButton3 = document.getElementById("szorzas3");
 const multiplyButton4 = document.getElementById("szorzas4");
 const multiplyInput = document.getElementById("multiplyInput");
 
+// Alapértelmezett eseménykezelők beállítása
+multiplyButton2.addEventListener("click", () =>{
+    if (itemList.length > 0) {
+        const lastItem = itemList[itemList.length - 1];
+        lastItem.piece *= 2;
+        updateListAndTotal();
+        saveItemListToSessionStorage();
+    }
+});
+
+multiplyButton3.addEventListener("click", () =>{
+    if (itemList.length > 0) {
+        const lastItem = itemList[itemList.length - 1];
+        lastItem.piece *= 3;
+        updateListAndTotal();
+        saveItemListToSessionStorage();
+    }
+});
+
+multiplyButton4.addEventListener("click", () =>{
+    if (itemList.length > 0) {
+        const lastItem = itemList[itemList.length - 1];
+        lastItem.piece *= 4;
+        updateListAndTotal();
+        saveItemListToSessionStorage();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('/items')
@@ -34,10 +61,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 cardContainer.appendChild(card);
             });
+
+            // Gomb eseménykezelők felülírása
+            multiplyButton2.addEventListener("click", () =>{
+                if (itemList.length > 0) {
+                    const lastItem = itemList[itemList.length - 1];
+                    lastItem.piece *= 2;
+                    updateListAndTotal();
+                    saveItemListToSessionStorage();
+                }
+            });
+
+            multiplyButton3.addEventListener("click", () =>{
+                if (itemList.length > 0) {
+                    const lastItem = itemList[itemList.length - 1];
+                    lastItem.piece *= 3;
+                    updateListAndTotal();
+                    saveItemListToSessionStorage();
+                }
+            });
+
+            multiplyButton4.addEventListener("click", () =>{
+                if (itemList.length > 0) {
+                    const lastItem = itemList[itemList.length - 1];
+                    lastItem.piece *= 4;
+                    updateListAndTotal();
+                    saveItemListToSessionStorage();
+                }
+            });
         })
         .catch(error => console.error('Error fetching items:', error));
 });
-
 
 const categoryTranslations = {
     "Soda": "Üdítő",
@@ -52,36 +106,7 @@ const categoryTranslations = {
     "Spritz": "Fröccs, Bor",
     "Wine": "Bor",
     "Champagne": "Pezsgő"
-  };
-  
-
-multiplyButton2.addEventListener("click", () =>{
-    if (itemList.length > 0) {
-        const lastItem = itemList[itemList.length - 1];
-        lastItem.piece *= 2;
-        updateListAndTotal();
-        saveItemListToSessionStorage();
-    }
-})
-
-multiplyButton3.addEventListener("click", () =>{
-    if (itemList.length > 0) {
-        const lastItem = itemList[itemList.length - 1];
-        lastItem.piece *= 3;
-        updateListAndTotal();
-        saveItemListToSessionStorage();
-    }
-})
-
-multiplyButton4.addEventListener("click", () =>{
-    if (itemList.length > 0) {
-        const lastItem = itemList[itemList.length - 1];
-        lastItem.piece *= 4;
-        updateListAndTotal();
-        saveItemListToSessionStorage();
-    }
-})
-
+};
 
 // Lista és végösszeg frissítése
 function updateListAndTotal() {
@@ -126,8 +151,6 @@ summaryBody.addEventListener('input', function(event) {
         updateTotal(); // Végösszeg frissítése
     }
 });
-
-
 
 // Az oldal betöltésekor ellenőrizzük, hogy van-e mentett adat a sessionStorage-ben
 window.addEventListener('DOMContentLoaded', function() {
@@ -181,10 +204,20 @@ function saveItemListToSessionStorage() {
 }
 
 // 1. Kategóriák meghatározása
-let categories = [];
+const categories = [...new Set(items.map(item => item.category))];
 
 // 2. Felhasználói felület kialakítása
 const categoryFilter = document.getElementById('categoryFilter');
+
+categories.forEach(category => {
+    const button = document.createElement('button');
+    button.textContent = categoryTranslations[category]; // Magyar fordítás használata
+    button.classList.add('btn', 'btn-secondary','btn-lg', 'mx-2');
+    button.addEventListener('click', function() {
+        filterItemsByCategory(category);
+    });
+    categoryFilter.appendChild(button);
+});
 
 // 3. Szűrés a kategóriák alapján
 function filterItemsByCategory(category) {
@@ -227,6 +260,17 @@ window.addEventListener('DOMContentLoaded', function() {
         updateListAndTotal(); // Lista és végösszeg frissítése a mentett adatok alapján
     }
 });
+
+function openCashoutPage() {
+    window.open('cashout.html', "_self");
+    updateListAndTotal(); // Lista és végösszeg frissítése
+}
+
+function backToDrinks() {
+    updateListAndTotal(); // Lista és végösszeg frissítése
+
+    window.open('index.html', "_self");
+}
 
 // Vissza gomb eseménykezelője
 backButton.addEventListener('click', function() {

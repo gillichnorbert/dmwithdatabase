@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         const response = await fetch('/items');
         const items = await response.json();
 
-
         // Meghívjuk a renderItems függvényt a letöltött elemekkel
         renderItems(items);
+
         function renderItems(itemList) {    
             itemList.forEach(item => {
                 const tr = document.createElement('tr');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <td>${item.category}</td>
                     <td>
                         <button class="btn btn-primary" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category}" 
-                        onclick="updateItem(this)" data-bs-target="#operatorModal" data-bs-toggle="modal">
+                        onclick="updateItemModal(this)">
                             Szerkesztés
                         </button>
                         <button class="btn btn-danger" onclick="deleteItem('${item._id}')">
@@ -28,19 +28,24 @@ document.addEventListener('DOMContentLoaded', async function() {
                 editItemBody.appendChild(tr);
             });
         }
-        
     } catch (error) {
         console.error('Error fetching items:', error);
     }
-    function updateItem(button) {
-        // Az adatok kinyerése a gomb adatattribútumaiból
-        const name = button.getAttribute('data-name');
-        const amount = button.getAttribute('data-amount');
-        const price = button.getAttribute('data-price');
-        const category = button.getAttribute('data-category');
-    
-        // Az adatok megjelenítése vagy feldolgozása a szerkesztéshez
-        // Például itt megjelenítheted a szerkesztő űrlapot a modalban
-        console.log('Szerkesztés gombra kattintva:', name, amount, price, category);
-    }
 });
+
+function updateItemModal(button) {
+    const itemName = button.getAttribute('data-name');
+    const itemAmount = button.getAttribute('data-amount');
+    const itemPrice = button.getAttribute('data-price');
+    const itemCategory = button.getAttribute('data-category');
+
+    // Beállítjuk a modal ablak tartalmát a gombhoz tartozó adatokkal
+    document.getElementById('itemName').value = itemName;
+    document.getElementById('itemAmount').value = itemAmount;
+    document.getElementById('itemPrice').value = itemPrice;
+    document.getElementById('itemCategory').value = itemCategory;
+
+    // Megjelenítjük a modal ablakot
+    const modal = new bootstrap.Modal(document.getElementById('operatorModal'));
+    modal.show();
+}

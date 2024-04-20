@@ -1,4 +1,5 @@
 const { MongoClient, ObjectId } = require('mongodb');
+
 const express = require('express');
 
 const app = express();
@@ -76,7 +77,7 @@ app.put('/items/:id', async (req, res) => {
         const collection = database.collection(collectionname);
 
         const result = await collection.updateOne(
-            { _id: ObjectId(itemId) }, // A módosítandó elem azonosítója ObjectId formátumban
+            { _id: itemId }, // Az azonosító egy sima string lesz
             { $set: updatedItem } // A frissített adatok beállítása
         );
 
@@ -90,8 +91,4 @@ app.put('/items/:id', async (req, res) => {
         await client.close();
         console.log("MongoDB connection closed.");
     }
-});
-
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
 });

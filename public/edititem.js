@@ -57,7 +57,6 @@ function updateItem() {
     const itemPrice = document.getElementById('itemPrice').value;
     const itemCategory = document.getElementById('itemCategory').value;
 
-    // Fetch kérés konfigurálása
     const requestOptions = {
         method: 'PUT',
         headers: {
@@ -71,7 +70,6 @@ function updateItem() {
         })
     };
 
-    // Fetch kérés elküldése a szervernek
     fetch(`/items/${itemId}`, requestOptions)
         .then(response => {
             if (!response.ok) {
@@ -81,12 +79,9 @@ function updateItem() {
         })
         .then(data => {
             console.log('Item updated successfully:', data);
-            // Frissítési logika a felületen
-            // Például: frissítheted a táblázatot vagy más felhasználói visszajelzést adhatsz
-            // Itt is lehetőség van a modal ablak elrejtésére, ha szükséges
+            // Itt frissíthetsz vagy újratöltést végezhetsz a felhasználói felületen
         })
         .catch(error => {
             console.error('Error updating item:', error);
-            // Hiba kezelése a felületen
         });
 }

@@ -63,7 +63,7 @@ app.post('/items', async (req, res) => {
 app.put('/items/:id', async (req, res) => {
     try {
         const itemId = req.params.id;
-        const updatedItem = req.body; // A módosított elem a PUT kérés testéből érkezik
+        const updatedItem = req.body;
 
         await client.connect();
         console.log("Connected to MongoDB!");
@@ -72,8 +72,8 @@ app.put('/items/:id', async (req, res) => {
         const collection = database.collection(collectionname);
 
         const result = await collection.updateOne(
-            { _id: itemId }, // Az azonosító egy sima string lesz
-            { $set: updatedItem } // A frissített adatok beállítása
+            { _id: ObjectId(itemId) }, // Az ObjectId konvertálás szükséges
+            { $set: updatedItem }
         );
 
         console.log("Item updated:", itemId);
@@ -84,6 +84,7 @@ app.put('/items/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 
 
 app.listen(port, () => {

@@ -34,6 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 cardContainer.appendChild(card);
             });
+
+            // Régi kategória gombok generálása és eseménykezelőjük beállítása
+            const categoryFilter = document.getElementById('categoryFilter');
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = categoryTranslations[category]; // Magyar fordítás használata
+                button.classList.add('btn', 'btn-secondary','btn-lg', 'mx-2');
+                button.addEventListener('click', function() {
+                    filterItemsByCategory(category);
+                });
+                categoryFilter.appendChild(button);
+            });
         })
         .catch(error => console.error('Error fetching items:', error));
 });

@@ -425,3 +425,16 @@ thead {
     margin-right: -1rem; /* A jobb oldali elemek közötti részletek eltávolítása */
     height: 80px;
 }
+
+
+/* CSS-szabályok a light osztályhoz */
+.light {
+    background-color: white; /* példa: a háttérszín fehér */
+}
+
+/* A light osztályhoz tartozó szöveg színének megváltoztatása */
+.light .card-title,
+.light .card-subtitle,
+.light .card-text {
+    color: black; /* példa: a szöveg színe fekete */
+}

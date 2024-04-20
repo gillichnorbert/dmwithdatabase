@@ -21,10 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
             cardContainer.className = 'row';
             itemPlace.appendChild(cardContainer);
             items.forEach(item => {
+                const textColor = isLightColor(item.color) ? 'black' : 'white'; // Ha a szín világos, a szöveg legyen fekete, különben fehér
                 const card = document.createElement('div');
                 card.className = 'card-item';
                 card.innerHTML = `
-                    <div class="card ${item.category}" style="background-color:${item.color}">
+                    <div class="card ${item.category}" style="background-color:${item.color}; color:${textColor}">
                         <div class="card-body">
                             <h5 class="card-title">${item.name}</h5>
                             <h6 class="card-subtitle">${item.amount}</h6>
@@ -96,6 +97,22 @@ multiplyButton4.addEventListener("click", () =>{
         saveItemListToSessionStorage();
     }
 })
+
+
+function isLightColor(hexColor) {
+    // Kivonjuk az RGB értékeket a hexadecimális színből
+    let r = parseInt(hexColor.substring(1, 3), 16);
+    let g = parseInt(hexColor.substring(3, 5), 16);
+    let b = parseInt(hexColor.substring(5, 7), 16);
+    
+    // Számítjuk a szín fényerejét az RGB színtérben
+    let brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    // Ha a fényerő értéke nagyobb, mint 125, akkor a szín világos
+    return brightness > 125;
+}
+
+
 
 
 // Lista és végösszeg frissítése

@@ -24,12 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const textColor = isLightColor(item.color) ? 'black' : 'white'; // Ha a szín világos, a szöveg legyen fekete, különben fehér
                 const card = document.createElement('div');
                 card.className = 'card-item';
+                const bgColor = isLightColor(item.color) ? 'white' : 'black'; // Háttérszín beállítása a szín fényereje alapján
                 card.innerHTML = `
-                    <div class="card ${item.category}" style="background-color:${item.color}; color:${textColor}">
+                    <div id="itemButton" style="background-color:${item.color}; color:${textColor}; background:${bgColor}">
                         <div class="card-body">
-                            <h5 class="card-title">${item.name}</h5>
-                            <h6 class="card-subtitle">${item.amount}</h6>
-                            <p class="card-text">${item.price} Ft</p>
+                            <h5 class="card-title" id="itemName">${item.name}</h5>
+                            <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>
+                            <p class="card-text" id="itemPrice">${item.price} Ft</p>
                         </div>
                     </div>
                 `;
@@ -204,11 +205,6 @@ clearListBtn.addEventListener('click', function() {
     saveItemListToSessionStorage(); 
 });
 
-// Az itemList-et elmentjük a sessionStorage-be
-function saveItemListToSessionStorage() {
-    sessionStorage.setItem('itemList', JSON.stringify(itemList));
-}
-
 // 1. Kategóriák meghatározása
 let categories = [    "Soda",
 "Shot",
@@ -237,10 +233,11 @@ function displayItems(itemsToDisplay) {
 
     itemsToDisplay.forEach(item => {
         const textColor = isLightColor(item.color) ? 'black' : 'white';
+
         const card = document.createElement('div');
         card.className = 'card-item';
         card.innerHTML = `
-            <div id="itemButton" style="background-color:${item.color} color:${textColor}"">
+            <div id="itemButton" style="background-color:${item.color}; color:${textColor};">
                 <div class="card-body">
                     <h5 class="card-title" id="itemName">${item.name}</h5>
                     <h6 class="card-subtitle" id="itemAmount">${item.amount}</h6>

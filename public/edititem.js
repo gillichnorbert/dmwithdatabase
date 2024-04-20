@@ -1,38 +1,3 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        const response = await fetch('/items');
-        const items = await response.json();
-
-        // Meghívjuk a renderItems függvényt a letöltött elemekkel
-        renderItems(items);
-
-        function renderItems(itemList) {    
-            itemList.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${item.name}</td>
-                    <td>${item.amount}</td>
-                    <td>${item.price} Ft</td>
-                    <td>${item.category}</td>
-                    <td>
-                        <button class="btn btn-primary" data-id="${item._id}" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category}" 
-                        onclick="openUpdateItemModal(this)">
-                            Szerkesztés
-                        </button>
-                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')" disabled>
-                            Törlés
-                        </button>
-                    </td>
-                `;
-                const editItemBody = document.getElementById('editItemBody');
-                editItemBody.appendChild(tr);
-            });
-        }
-    } catch (error) {
-        console.error('Error fetching items:', error);
-    }
-});
-
 function openUpdateItemModal(button) {
     const itemId = button.getAttribute('data-id');
     const itemName = button.getAttribute('data-name');
@@ -85,3 +50,42 @@ function updateItem() {
             console.error('Error updating item:', error);
         });
 }
+
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('/items');
+        const items = await response.json();
+
+        renderItems(items);
+
+        function renderItems(itemList) {    
+            itemList.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.amount}</td>
+                    <td>${item.price} Ft</td>
+                    <td>${item.category}</td>
+                    <td>
+                        <button class="btn btn-primary" data-id="${item._id}" data-name="${item.name}" data-amount="${item.amount}" data-price="${item.price}" data-category="${item.category}" 
+                        onclick="openUpdateItemModal(this)">
+                            Szerkesztés
+                        </button>
+                        <button class="btn btn-danger" onclick="deleteItem('${item._id}')" disabled>
+                            Törlés
+                        </button>
+                    </td>
+                `;
+                const editItemBody = document.getElementById('editItemBody');
+                editItemBody.appendChild(tr);
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching items:', error);
+    }
+});
+
+// Eseménykezelő a "Mentés" gombhoz
+document.getElementById('multiButton').addEventListener('click', function() {
+    updateItem();
+});

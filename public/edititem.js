@@ -1,9 +1,3 @@
-window.addEventListener('DOMContentLoaded', function() {
-    // Ha nincs bejelentkezve, és nem a belépés oldalon vagyunk, visszairányítjuk a belépés oldalra
-    if (!window.isLoggedInToAdmin && window.location.pathname !== "/index.html") {
-        window.location.href = 'index.html';
-    } else {
-
 function openUpdateItemModal(button) {
     const itemId = button.getAttribute('data-id');
     const itemName = button.getAttribute('data-name');
@@ -120,4 +114,3 @@ document.addEventListener('DOMContentLoaded', async function() {
 document.getElementById('multiButton').addEventListener('click', function() {
     updateItem();
 });
-}});

@@ -138,6 +138,32 @@ app.delete('/items/:id', async (req, res) => {
 });
 
 
+// Átirányítási logika a /pass útvonalon keresztül
+app.get('/pass', async (req, res) => {
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB!");
+        const database = client.db(dbname);
+        const collection = database.collection(collectionname2);
+        const pass = await collection.find().toArray();
+        if (pass.length > 0) {
+            if (pass[1].name === 'admin') {
+                // Ha az admin felhasználó, akkor engedjük hozzáférést mindkét oldalhoz
+                return res.redirect('/admin.html');
+            } else if (pass[1].name === 'bar') {
+                // Ha a bar felhasználó, akkor csak a pos.html-re irányítjuk
+                return res.redirect('/pos.html');
+            }
+        }
+        res.status(404).json({ error: 'User not found' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
+

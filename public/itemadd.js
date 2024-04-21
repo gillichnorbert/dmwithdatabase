@@ -1,8 +1,3 @@
-window.addEventListener('DOMContentLoaded', function() {
-    // Ha nincs bejelentkezve, és nem a belépés oldalon vagyunk, visszairányítjuk a belépés oldalra
-    if (!window.isLoggedInToAdmin && window.location.pathname !== "/index.html") {
-        window.location.href = 'index.html';
-    } else {
 document.getElementById('addItemForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Az alapértelmezett formál működés megakadályozása
 
@@ -36,4 +31,3 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
     })
     .catch(error => console.error('Error adding item:', error));
 });
-}})

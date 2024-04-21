@@ -9,6 +9,7 @@ const MongoUri = process.env.uri;
 const client = new MongoClient(MongoUri);
 const dbname = process.env.dbname;
 const collectionname = process.env.collectionname;
+const collectionname2 = process.env.collectionname2
 
 // Middleware a JSON testek kezelésére
 app.use(express.json());
@@ -29,6 +30,27 @@ app.get('/items', async (req, res) => {
         console.log("Lekérdezés kész!");
 
         res.json(items); // Elküldjük az adatokat JSON formátumban
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
+app.get('/pass', async (req, res) => {
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB!");
+
+        const database = client.db(dbname);
+        const collection = database.collection(collectionname2);
+
+        console.log("Lekérdezés előtt");
+        const pass = await collection.find().toArray();
+        console.log(pass.name);
+        console.log("Lekérdezés kész!");
+
+        res.json(pass); // Elküldjük az adatokat JSON formátumban
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });

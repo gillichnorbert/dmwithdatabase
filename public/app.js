@@ -1,7 +1,7 @@
 if (!isLoggedIn) {
     window.location.href = 'index.html';
 }
-
+else {
 
 let itemList = [];
 let items = []; // Itt definiáljuk az items változót
@@ -276,3 +276,5 @@ window.addEventListener('DOMContentLoaded', function() {
 backButton.addEventListener('click', function() {
     displayItems(items); // Minden termék megjelenítése
 });
+
+}

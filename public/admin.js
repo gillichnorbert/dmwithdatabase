@@ -1,3 +1,5 @@
+const isLoggedIn = false;
+const isLoggedInToAdmin = false;
 fetch('/pass')
   .then(response => response.json())
   .then(data => {

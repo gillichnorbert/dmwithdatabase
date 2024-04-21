@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const categoryTranslations = {
     "Soda": "Üdítő",
-    "Shot": "Rövidital",
+    "Shot": "Shot",
     "Longdrink": "Longdrink",
     "Water": "Víz",
     "Cocktail": "Koktél",

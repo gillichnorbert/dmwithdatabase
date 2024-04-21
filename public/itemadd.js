@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Ha nincs bejelentkezve, visszairányítjuk az index.html oldalra
-    if (!isLoggedInToAdmin) {
+    if (!window.isLoggedInToAdmin) {
         window.location.href = 'index.html';
     } else {
 document.getElementById('addItemForm').addEventListener('submit', function(event) {

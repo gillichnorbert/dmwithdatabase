@@ -1,5 +1,5 @@
-let isLoggedIn = false;
-let isLoggedInToAdmin = false;
+window.isLoggedIn = false;
+window.isLoggedInToAdmin = false;
 fetch('/pass')
   .then(response => response.json())
   .then(data => {

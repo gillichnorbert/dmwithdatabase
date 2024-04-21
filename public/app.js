@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Ha nincs bejelentkezve, visszairányítjuk az index.html oldalra
-    if (!isLoggedIn) {
+    if (!window.isLoggedIn) {
         window.location.href = 'index.html';
     } else {
 

@@ -18,11 +18,11 @@ fetch('/pass')
       const user = users.find(user => user.name === enteredUsername && user.password === enteredPassword);
       if (user) {
         if (enteredUsername === 'admin') {
-          window.location.href = 'admin.html';
           isLoggedInToAdmin = true;
+          window.location.href = 'admin.html';
         } if (enteredUsername === 'bar') {
-          window.location.href = 'pos.html';
           isLoggedIn = true;
+          window.location.href = 'pos.html';
 
         }
       } else {

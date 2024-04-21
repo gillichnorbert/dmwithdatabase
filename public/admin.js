@@ -1,8 +1,7 @@
 fetch('/pass')
   .then(response => response.json())
   .then(data => {
-    const correctUsername = data.name; // Az adatbázisból lekért felhasználónév
-    const correctPassword = data.password; // Az adatbázisból lekért jelszó
+    const users = data; // Az adatbázisból lekért felhasználók tömbje
 
     const loginForm = document.getElementById('loginForm');
 
@@ -15,11 +14,12 @@ fetch('/pass')
       const enteredPassword = passwordInput.value;
 
       // Ellenőrzés, hogy a megadott felhasználónév és jelszó megfelelő-e
-      if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+      const user = users.find(user => user.name === enteredUsername && user.password === enteredPassword);
+      if (user) {
         // Ha az admin a felhasználónév, akkor az admin.html-re irányít
         if (enteredUsername === 'admin') {
           window.location.href = 'admin.html';
-        } if (enteredUsername === 'bar') {
+        } else {
           window.location.href = 'pos.html'; // Egyébként a pos.html-re irányít
         }
       } else {

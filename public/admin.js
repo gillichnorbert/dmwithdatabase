@@ -1,6 +1,3 @@
-window.isLoggedIn = false;
-
-window.isLoggedInToAdmin = false;
 fetch('/pass')
   .then(response => response.json())
   .then(data => {
@@ -19,10 +16,8 @@ fetch('/pass')
       const user = users.find(user => user.name === enteredUsername && user.password === enteredPassword);
       if (user) {
         if (enteredUsername === 'admin') {
-          window.isLoggedInToAdmin = true;
           window.location.href = 'admin.html';
         } if (enteredUsername === 'bar') {
-          window.isLoggedIn = true;
           window.location.href = 'pos.html';
 
         }

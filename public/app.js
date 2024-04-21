@@ -1,8 +1,3 @@
-window.addEventListener('DOMContentLoaded', function() {
-    // Ha nincs bejelentkezve, és nem a belépés oldalon vagyunk, visszairányítjuk a belépés oldalra
-    if (!window.isLoggedIn && window.location.pathname !== "/index.html") {
-        window.location.href = 'index.html';
-    } else {
 
 let itemList = [];
 let items = []; // Itt definiáljuk az items változót
@@ -278,4 +273,3 @@ backButton.addEventListener('click', function() {
     displayItems(items); // Minden termék megjelenítése
 });
 
-}});

@@ -47,7 +47,7 @@ app.get('/pass', async (req, res) => {
 
         console.log("Lekérdezés előtt");
         const pass = await collection.find().toArray();
-        console.log(pass.name);
+        console.log(pass[1].name);
         console.log("Lekérdezés kész!");
 
         res.json(pass); // Elküldjük az adatokat JSON formátumban

@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded', function() {
+//window.addEventListener('DOMContentLoaded', function() {
     // Ha nincs bejelentkezve, visszairányítjuk az index.html oldalra
-    if (!window.isLoggedIn) {
-        window.location.href = 'index.html';
-    } else {
+    //if (!window.isLoggedIn) {
+      //  window.location.href = 'index.html';
+    //} else {
 
 let itemList = [];
 let items = []; // Itt definiáljuk az items változót
@@ -278,4 +278,4 @@ backButton.addEventListener('click', function() {
     displayItems(items); // Minden termék megjelenítése
 });
 
-}});
+//}});

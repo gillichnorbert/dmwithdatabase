@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded', function() {
+//window.addEventListener('DOMContentLoaded', function() {
     // Ha nincs bejelentkezve, visszairányítjuk az index.html oldalra
-    if (!window.isLoggedInToAdmin) {
-        window.location.href = 'index.html';
-    } else {
+  //  if (!window.isLoggedInToAdmin) {
+    //    window.location.href = 'index.html';
+    //} else {
 document.getElementById('addItemForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Az alapértelmezett formál működés megakadályozása
 
@@ -36,4 +36,4 @@ document.getElementById('addItemForm').addEventListener('submit', function(event
     })
     .catch(error => console.error('Error adding item:', error));
 });
-}})
+//}})

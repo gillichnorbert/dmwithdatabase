@@ -1,7 +1,7 @@
 fetch('/pass')
   .then(response => response.json())
   .then(data => {
-    const correctUsername = data.username; // Az adatbázisból lekért felhasználónév
+    const correctUsername = data.name; // Az adatbázisból lekért felhasználónév
     const correctPassword = data.password; // Az adatbázisból lekért jelszó
 
     const loginForm = document.getElementById('loginForm');
@@ -24,7 +24,6 @@ fetch('/pass')
         }
       } else {
         alert('Hibás felhasználónév vagy jelszó! Kérem próbálja újra.');
-        usernameInput.value = ''; // Felhasználónév mező törlése
         passwordInput.value = ''; // Jelszómező törlése
       }
     });

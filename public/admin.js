@@ -13,18 +13,19 @@ fetch('/pass')
       const enteredUsername = usernameInput.value;
       const enteredPassword = passwordInput.value;
 
-      // Ellenőrzés, hogy a megadott felhasználónév és jelszó megfelelő-e
       const user = users.find(user => user.name === enteredUsername && user.password === enteredPassword);
       if (user) {
-        // Ha az admin a felhasználónév, akkor az admin.html-re irányít
         if (enteredUsername === 'admin') {
           window.location.href = 'admin.html';
-        } else {
-          window.location.href = 'pos.html'; // Egyébként a pos.html-re irányít
+          isLoggedInToAdmin = true;
+        } if (enteredUsername === 'bar') {
+          window.location.href = 'pos.html';
+          isLoggedIn = true;
+
         }
       } else {
         alert('Hibás felhasználónév vagy jelszó! Kérem próbálja újra.');
-        passwordInput.value = ''; // Jelszómező törlése
+        passwordInput.value = '';
       }
     });
   })

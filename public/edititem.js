@@ -1,3 +1,7 @@
+if (!isLoggedInToAdmin) {
+    window.location.href = 'index.html';
+}
+
 function openUpdateItemModal(button) {
     const itemId = button.getAttribute('data-id');
     const itemName = button.getAttribute('data-name');

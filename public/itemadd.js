@@ -1,4 +1,7 @@
-// Az űrlap eseményének figyelése
+if (!isLoggedInToAdmin) {
+    window.location.href = 'index.html';
+}
+
 document.getElementById('addItemForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Az alapértelmezett formál működés megakadályozása
 

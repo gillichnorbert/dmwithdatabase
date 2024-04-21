@@ -1,3 +1,8 @@
+if (!isLoggedIn) {
+    window.location.href = 'index.html';
+}
+
+
 let itemList = [];
 let items = []; // Itt definiáljuk az items változót
 

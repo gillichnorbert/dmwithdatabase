@@ -1,7 +1,8 @@
-if (!isLoggedInToAdmin) {
-    window.location.href = 'index.html';
-}
-else {
+window.addEventListener('DOMContentLoaded', function() {
+    // Ha nincs bejelentkezve, visszairányítjuk az index.html oldalra
+    if (!isLoggedInToAdmin) {
+        window.location.href = 'index.html';
+    } else {
 
 function openUpdateItemModal(button) {
     const itemId = button.getAttribute('data-id');
@@ -119,4 +120,4 @@ document.addEventListener('DOMContentLoaded', async function() {
 document.getElementById('multiButton').addEventListener('click', function() {
     updateItem();
 });
-}
+}});

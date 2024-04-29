@@ -23,16 +23,19 @@
   </div>
 
   <div class="summarycontainer">
-    <button id="adminButton" class="btn btn-warning" onclick="window.location.href='index.html';">Profil váltás</button>
+
     <div class="fixed-summary">
       <div class="totalItems">
 
-        <div class="input-group">
-          <button class="btn btn-secondary" id="szorzas2">2X</button>
-          <button class="btn btn-secondary" id="szorzas3">3X</button>
-          <button class="btn btn-secondary" id="szorzas4">4X</button>
+        <div class="summaryButtonsTop">
+          <div class="input-group">
+            <button class="btn btn-secondary" id="szorzas2">2X</button>
+            <button class="btn btn-secondary" id="szorzas3">3X</button>
+            <button class="btn btn-secondary" id="szorzas4">4X</button>
+            <button id="adminButton" class="btn btn-warning" onclick="window.location.href='index.html';">Profil váltás</button>
+          </div>
+          
         </div>
-
         <table class="table table-striped" id="fixed-list">
           <thead>
             <tr>
@@ -53,6 +56,8 @@
     </div>
     
       <button id="clearListBtn" class="btn btn-danger">Lista törlése</button>
+      <button id="Split2" class="btn btn-primary">Split /2</button>
+      <button id="Split3" class="btn btn-primary">Split /3</button>
       <!--<button id="openListBtn" class="btn btn-warning" onclick="openCashoutPage()">Lista megtekintése</button>-->
     </div>
   </div>

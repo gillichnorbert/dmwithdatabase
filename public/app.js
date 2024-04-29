@@ -4,6 +4,8 @@ let items = []; // Itt definiáljuk az items változót
 
 const summaryBody = document.getElementById('summeryBody');
 const total = document.getElementById('total');
+const split2 = document.getElementById("Split2")
+const split3 = document.getElementById("Split3")
 const clearListBtn = document.getElementById('clearListBtn');
 const backButton = document.getElementById('backButton');
 const multiplyButton2 = document.getElementById("szorzas2");
@@ -108,6 +110,38 @@ function isLightColor(hexColor) {
 
     // Ha a fényerő értéke nagyobb, mint 125, akkor a szín világos
     return brightness > 125;
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Kód a termékek betöltésére és megjelenítésére...
+
+    // Split2 és Split3 gombok eseményfigyelőinek hozzáadása
+    split2.addEventListener('click', function() {
+        splitItems(2);
+    });
+
+    split3.addEventListener('click', function() {
+        splitItems(3);
+    });
+});
+
+function splitItems(divisor) {
+    let totalAmount = 0;
+
+    // Számítsuk ki a jelenlegi végösszeget
+    itemList.forEach(item => {
+        totalAmount += item.price * item.piece;
+    });
+
+    // Osszuk szét a végösszeget a megadott számmal
+    totalAmount /= divisor;
+
+    // Frissítsük a végösszeget
+    total.innerText = `${totalAmount} Ft`;
+
+    // Mentjük az új végösszeget a sessionStorage-be
+    sessionStorage.setItem('totalAmount', totalAmount);
 }
 
 

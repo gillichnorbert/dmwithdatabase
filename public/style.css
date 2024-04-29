@@ -203,11 +203,7 @@ header {
     font-size: 1em;
 }
 
-#adminButton {
-    padding: 10px;
-    margin-left: 73%;
-    margin-top: 1.5%;
-}
+
 
 .summarycontainer {
     position: fixed;
@@ -236,7 +232,15 @@ header {
 }
 
 .input-group {
-    display: flex;
+    width: 100%;
+}
+
+#adminButton {
+    width: 40%;
+    flex-wrap: wrap;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 9.8%;
 }
 
 td .form-control {
@@ -246,9 +250,24 @@ td .form-control {
     text-align: center;
 }
 
-.input-group .btn {
-    margin: 10px;
+#szorzas2 {
+    margin: 5px 5px 5px 5px;
     width: 15%;
+    height: 50px;
+}
+
+ #szorzas3 {
+    margin: 5px 5px 5px 0px;
+    width: 15%;
+}
+
+ #szorzas4 {
+    margin: 5px 5px 5px 0px;
+    width: 15%;
+}
+
+.summaryButtonsTop {
+
 }
 
 /* Fixált összegzés stílusok */
@@ -258,7 +277,7 @@ td .form-control {
     right: 1%;
     width: 28%;
     max-height: 60%;
-    bottom: 25%;
+    bottom: 39%;
     height: 100%;
     background-color: #ffffff; /* Fehér */
     border: 1px solid #cccccc; /* Szürke */
@@ -333,7 +352,7 @@ thead {
 }
 
 #totalAmount {
-    top: 76%;
+    top: 62%;
     right: 1%;
     position: fixed;
     width: 28%; /* Korlátozzuk a fix szélességet nagyobb képernyőkön */
@@ -353,8 +372,30 @@ thead {
     width: 28%;
     height: 12.5%;
     position: fixed;
+    bottom: 14.7%;
+    right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Split3 {
+    width: 13.4%;
+    height: 12.5%;
+    position: fixed;
     bottom: 0.7%;
     right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Split2 {
+    width: 13.4%;
+    height: 12.5%;
+    position: fixed;
+    bottom: 0.7%;
+    left: 71%;
     display: flex;
     justify-content: center;
     align-items: center;

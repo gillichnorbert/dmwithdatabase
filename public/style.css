@@ -237,10 +237,10 @@ header {
 
 #adminButton {
     width: 40%;
-    flex-wrap: wrap;
     height: 50px;
     margin-top: 5px;
-    margin-left: 9.8%;
+    margin-left: 5%;
+    
 }
 
 td .form-control {

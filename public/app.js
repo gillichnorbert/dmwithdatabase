@@ -138,7 +138,7 @@ function splitItems(divisor) {
     totalAmount /= divisor;
 
     // Frissítsük a végösszeget
-    total.innerText = `${divisor}X ${totalAmount} Ft`;
+    total.innerText = `${divisor}X ${Math.round(totalAmount)} Ft`;
 
     // Mentjük az új végösszeget a sessionStorage-be
     sessionStorage.setItem('totalAmount', totalAmount);

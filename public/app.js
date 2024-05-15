@@ -165,7 +165,7 @@ function updateListAndTotal() {
         sum += item.price * item.piece; // Darabszám figyelembevétele a végösszeg számításakor
     });
 
-    total.innerText = ` ${sum} Ft`; // Végösszeg frissítése
+    total.innerText = ` ${Math.round(sum)} Ft`; // Végösszeg frissítése
 
     // Trashbin (kukás) ikonokhoz eseményfigyelők hozzáadása
     const trashbins = document.querySelectorAll('.trashbin');

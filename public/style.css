@@ -240,7 +240,7 @@ header {
     height: 50px;
     margin-top: 5px;
     margin-left: 5%;
-    
+
 }
 
 td .form-control {
@@ -264,10 +264,6 @@ td .form-control {
  #szorzas4 {
     margin: 5px 5px 5px 0px;
     width: 15%;
-}
-
-.summaryButtonsTop {
-
 }
 
 /* Fixált összegzés stílusok */

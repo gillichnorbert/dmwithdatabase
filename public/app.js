@@ -59,14 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 const categoryTranslations = {
-    "Soda": "Üdítő",
+    "Soda": "Üdítő/Víz",
     "Shot": "Shot",
     "Longdrink": "Longdrink",
     "Cocktail": "Koktél",
     "Cup": "Pohár",
     "Beer": "Sör",
     "Energydrink": "Energiaital",
-    "Spritz": "Fröccs, Bor",
+    "Spritz": "Fröccs/Bor/Pezsgő",
     "Other": "Egyéb"
   };
   

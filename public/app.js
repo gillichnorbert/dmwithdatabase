@@ -62,12 +62,12 @@ const categoryTranslations = {
     "Soda": "Üdítő",
     "Shot": "Shot",
     "Longdrink": "Longdrink",
-    "Water": "Víz",
     "Cocktail": "Koktél",
     "Cup": "Pohár",
     "Beer": "Sör",
     "Energydrink": "Energiaital",
-    "Spritz": "Fröccs, Bor"
+    "Spritz": "Fröccs, Bor",
+    "Other": "Egyéb"
   };
   
 
@@ -245,15 +245,16 @@ clearListBtn.addEventListener('click', function() {
 });
 
 // 1. Kategóriák meghatározása
-let categories = [    "Soda",
+let categories = [    
+    "Cup",
+    "Soda",
 "Shot",
 "Longdrink",
-"Water",
 "Cocktail",
-"Cup",
 "Beer",
 "Energydrink",
-"Spritz"];
+"Spritz",
+"Other"];
 
 // 2. Felhasználói felület kialakítása
 const categoryFilter = document.getElementById('categoryFilter');
